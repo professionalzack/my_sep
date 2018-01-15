@@ -5,7 +5,8 @@ class LinkedList
   attr_accessor :tail
 
   # This method creates a new `Node` using `data`, and inserts it at the end of the list.
-  def add_to_tail(node)
+  def add_to_tail(nodeData)
+    node = Node.new(nodeData)
     temp = @head
     if @head == nil
       @head = node
@@ -48,11 +49,11 @@ class LinkedList
   # This method removes `node` from the list and must keep the rest of the list intact.
   def delete(node)
     temp = @head
-    if temp == node
+    if temp.data == node
       @head = temp.next
     end
-    while temp != nil
-      if temp.next == node
+    while temp.next != nil
+      if temp.next.data == node
         if temp.next == @tail
           @tail = temp
           @tail.next = nil
@@ -77,5 +78,18 @@ class LinkedList
   # This method removes and returns the first node in the Linked List and must set Linked List's head to the second node.
   def remove_front
     @head = @head.next
+  end
+
+  def locate(target)
+    current_node = @head
+    while current_node != nil
+      if current_node.data == target
+        return current_node
+      else
+        current_node = current_node.next
+      end
+    end
+    return nil
+
   end
 end

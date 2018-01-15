@@ -1,0 +1,1 @@
+Basically, as per the 'hints' given, doubling the size of the array slows the process down somewhat (because it takes time to do) and also may lead to fragmentation. these issues are compounded with successive doubling. the first couple may not matter as much, but a doubled array with get huge after not too long. 

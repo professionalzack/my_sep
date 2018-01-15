@@ -1,0 +1,4 @@
+1. Spatial locality is where in actual geography (typically of a hard drive etc) item are located in relation to each other. How arrays are actually literally next to each other. 
+
+
+2.  In my benchmark, the array went faster than the linked list for every action, but when i looked it up i found out that linked lists are faster for some other things. also, linked lists seem to hae some other benefits that are not speed related.
