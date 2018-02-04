@@ -8,10 +8,14 @@ class HashClass
   def []=(key, value)
     code = key.is_a?(Numeric) ? key : index(key, @size)
     if @items[code].nil? || @items[code][1] == value
-      @items[code] = [key, value]
+      @items[code] = Node.new(key, value)
     elsif key == @items[code][0]
       @items[code] << value
+    elsif 
+      @items[code].key == key && @items[code].value == value
+      return
     else
+      newInd = self.next_open_index
       resize
       self[key] = value
     end

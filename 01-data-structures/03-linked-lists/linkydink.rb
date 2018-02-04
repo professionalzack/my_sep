@@ -6,12 +6,16 @@ llist = LinkedList.new
 i = 1
 
 
+
+
 while i <= n  do
    llist.add_to_tail(i.to_s)
    i +=1
 end
 
 
-puts llist.locate("10").data
+ llist.delete("10")
+
+ p llist
 
 

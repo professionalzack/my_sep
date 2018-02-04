@@ -3,70 +3,84 @@ require_relative 'node'
 class OpenAddressing
   def initialize(size)
     @items = Array.new(size)
-    @size = size
   end
 
   def []=(key, value)
-    code = key.is_a?(Numeric) ? key : index(key, @size)
-    if @items[code].nil? || @items[code][1] == value
-      @items[code] = [key, value]
-    elsif key == @items[code][0]
-      @items[code] << value
+    code = self.index(key, size)
+    if @items[code] == nil
+      @items[code] = Node.new(key, value)
+    elsif @items[code].key == key && @items[code].value == value
+      return
     else
-      next_open_index(index(key, @items.size))
-      #self[key] = value
+      newInd = self.next_open_index(code)
+      if @items[code].key == key && @items[code].value != value && newInd == -1
+        self.resize
+        @items[newInd].value = value
+      elsif newInd == -1
+        self.resize
+        self[key] = value
+      else
+        @items[newInd] = Node.new(key, value)
+        @items[newInd].value = value
+      end
     end
   end
 
   def [](key)
-    keyIndex = index(key, @size)
-    @items[keyIndex][1]
+    keyIndex = self.index(key, size)
+    while keyIndex < size
+      if @items[keyIndex].key == key
+        return @items[keyIndex].value
+      else
+        keyIndex += 1
+      end
+    end
   end
 
   # Returns a unique, deterministically reproducible index into an array
   # We are hashing based on strings, let's use the ascii value of each string as
   # a starting point.
   def index(key, size)
-    return key.sum % size
+    key.sum % size
   end
 
   # Given an index, find the next open index in @items
   def next_open_index(index)
-    while index < @items.length do
+    if index === 0 || (index + 1) >= @items.length
+      return -1
+    end
+    while (index + 1) < @items.length do
       if @items[index].nil?
         return index
       else
         index += 1
       end
     end
-    if index >= @items.length
-      return -1
-    end
-
+    return -1
   end
 
   # Simple method to return the number of items in the hash
   def size
-    counter = 0
-    @items.each do |item|
-      if item.nil?
-        counter += 1
-      else
-        counter += item.length - 1
-      end
-    end
-    counter
+    @items.length
   end
 
   # Resize the hash
   def resize
-    @size *= 2
+    @size = @items.length * 2
     oldArr = @items
     @items = Array.new(@size)
     oldArr.each do |item|
       next unless item
-      code = index(item[0], @size)
-      @items[code] = item
+        code = self.index(item.key, @items.length)
+        @items[code] = Node.new(item.key, item.value)
     end
+  end
+  def state
+    @items.each do |item|
+      next unless item
+        puts "key " +item.key+" & value "+item.value+"."
+      
+    end
+
   end
 end
