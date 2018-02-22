@@ -53,6 +53,7 @@ class BinarySearchTree
   def delete(root, data)
     return unless root && data
     goner = self.find(root, data) 
+    return if goner.nil?
     if goner.rating < root.rating
       root.left = delete(root.left, data)
     elsif goner.rating > root.rating

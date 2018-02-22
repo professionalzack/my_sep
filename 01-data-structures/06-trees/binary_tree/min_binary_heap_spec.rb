@@ -44,13 +44,13 @@ RSpec.describe MinBinaryHeap, type: Class do
 
     it "properly finds a left node" do
       tree.insert(pacific_rim)
-      expect(tree.find(pacific_rim).title).to eq "Pacific Rim"
+      expect(tree.find(pacific_rim.title).title).to eq "Pacific Rim"
     end
 
     it "properly finds a left-left node" do
       tree.insert(braveheart)
       tree.insert(pacific_rim)
-      expect(tree.find(pacific_rim).title).to eq "Pacific Rim"
+      expect(tree.find(pacific_rim.title).title).to eq "Pacific Rim"
     end
 
   end
@@ -62,22 +62,22 @@ RSpec.describe MinBinaryHeap, type: Class do
 
     it "properly deletes a left node" do
       tree.insert(hope)
-      tree.delete(hope)
-      expect(tree.find(hope)).to be_nil
+      tree.delete(hope.title)
+      expect(tree.find(hope.title)).to be_nil
     end
 
     it "properly deletes a left-left node" do
       tree.insert(braveheart)
       tree.insert(pacific_rim)
-      tree.delete(pacific_rim)
-      expect(tree.find(pacific_rim)).to be_nil
+      tree.delete(pacific_rim.title)
+      expect(tree.find(pacific_rim.title)).to be_nil
     end
 
     it "properly deletes a left-right node" do
       tree.insert(donnie)
       tree.insert(inception)
-      tree.delete(inception)
-      expect(tree.find(inception)).to be_nil
+      tree.delete(inception.title)
+      expect(tree.find(inception.title)).to be_nil
     end
   end
 

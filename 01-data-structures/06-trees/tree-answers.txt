@@ -1,0 +1,10 @@
+How much time does an average insertion consume in the Binary Search Tree compared to the Heap?
+    The tree takes a staggeringly long time to write, particularly when compared to the Heap.
+How much time does finding 50000 in the Binary Search Tree consume compared to the Heap?
+    The tree takes about 2/3 the amount of time that the heap takes to find the 5000th node.
+How much time does the average deletion consume in a Binary Search Tree compared to the Heap?
+    Deletions were actually pretty close, but with the tree coming in noticeably quicker.
+When would you use a Binary Search Tree and why?
+    When you want to write the whole tree once and then look stuff up forever, tree may be for you. Once you've gotten all the node inserted, everything will be quick-as-can-be.
+When would you use an Heap and why?
+    Any other time would be great. If you are constantly updating your tree with new information, perhaps a heap would have been a better choice.

@@ -15,9 +15,9 @@ class MinBinaryHeap
 		shift_up(@items.size - 1)
   end
 
-  def delete(node)
-		return if node.nil?
-		item_position = @items_map[node.title]
+  def delete(data)
+		return if data.nil?
+		item_position = @items_map[data]
 		unless item_position.nil?
 			exchange(item_position, @items.size - 1)
 			item_to_remove = @items.pop
@@ -27,9 +27,9 @@ class MinBinaryHeap
 		end	
 	end
 
-	def find(node)
-		return if node.nil?
-		item_position = @items_map[node.title]
+	def find(data)
+		return if data.nil?
+		item_position = @items_map[data]
 		return if item_position.nil?
 		return @items[item_position]
 	end
