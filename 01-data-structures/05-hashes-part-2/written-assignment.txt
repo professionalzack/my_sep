@@ -1,0 +1,2 @@
+1. three collision resolution strategies _not_ mentioned in the prompt:
+    1. 
