@@ -6,7 +6,7 @@ class MinBinaryHeap
 
   def initialize
     @items = []
-		@items_map = Hash.new
+	@items_map = Hash.new
   end
 
   def insert(node)
