@@ -1,0 +1,23 @@
+1) Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using linear search?
+    7, as G is the seventh letter of the set.
+2) Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using binary search?
+    3
+3) Calculate fib(10), fib(11), fib(12) by hand.
+    0 = 0
+    1 = 1
+    2 = (0+1)
+    3 = (1+1)
+    4 = (1+2)
+    5 = (2+3)
+    6 = (3+5)
+    7 = (5+8)
+    8 = (8+13)
+    9 = (13+21)
+    10 = (21+34), so 55
+    11 = (34+55), so 89
+    12 = (55+89), so 144 (which is also happens to be 12 squared! cool) 
+
+1) Given an unsorted collection of a million items, which algorithm would you choose between linear search and binary search? Would you use an iterative or recursive solution? Explain your reasoning.
+    I would use a linear search for an unsorted collection, bc binary wouldnt work unless I sorted it first, which would also take a huge amount of time. I would use iterative bc, well, it seems faster, particuarly for linear search. just go through everything one by one. 
+2) Given a sorted collection of a million items, which algorithm would you choose between linear search and binary search? Would you use an iterative or recursive solution? Explain your reasoning. 
+    With a sorted collection I would use binary search. Except for possibly some of the earliest indices, binary is simply faster, but especially for the indices at the end of the collection. wow! for this i would use recursion, bc I honestly don't know better, and because I like the way it looks, both on paper and in my mental visual representation of what is happening.
