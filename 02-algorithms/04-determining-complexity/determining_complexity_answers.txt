@@ -1,0 +1,6 @@
+1) I would have to say that the Big-O of 'hello world' is O(1). that is because there is no way for this function to ever take a different amount of time. 
+2) This one is O(n) because it iterates over the array only once, no matter what, so the number of operations increases at the exact same rate as the size of the array.
+3) 0(n^2). this is almost like two linear growths in one, one inside of the other. as the array of arrays grows, there is another array to count in the first degree of depth, and then another array to iterate through in the second
+4) 0(2^n). as the integer n increases in value, the amount of time the function takes increases exponentially. it gets quite large quite quickly
+5) this feels like a trick question, because the answer seems to be O(n) once again. the function looks complicated, but it is pretty straightforward. as the value of the argument increases, the number of operations increases at the same rate. the answer return increases at a higher rate, but that shouldnt effect the speed of performance. 
+6) because this sort function iterates through the array and then recursively calls parts of itself, it has both linear and logarithmic elements. therefore i think the answer here is O(n log n)
