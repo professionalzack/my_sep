@@ -22,6 +22,5 @@
      end
    end
 
-   # Return the sorted array
    sorted_array
  end
