@@ -1,0 +1,24 @@
+1)Describe an analogy for relating an algorithm that has efficiency O(1) and another algorithm that has O(2n). An example would be:
+O(1) would be summoning an extraplanar ally, bc it always takes the same amount of time (instant). O(2n) would be an Orb of Destruction, which builds in powers as it slowly moves towards its intended target. 
+
+2)In plain English, what is the best case scenario for binary search? In a binary search, the best case scenario would be for the data that is being sought after to also be the first data checked. 
+
+3)In plain English, what is the worst-case scenario for binary search?
+    This is a case in which the last possible searchable element holds the data that is being sought. 
+4)In plain English, what is the bounded-case scenario for binary search?
+    Anywhere in between the first or last piece of data, often close to the middle.
+5)Create a graph using the data below. Here's a CSV with the values you'll need. okay
+6)What is the limit of the function above as n approaches infinity? the graph shows the function growing more rapidly than n, so i would think that limit is also infinity.
+7)What is the Big-O of an algorithm that has the data points above? the big O would be O(n^2) because thats how many possible iterations there are and so the last one would be that number.
+8)Write a Ruby method that takes a number n. This method must print the worst-case number of iterations for linear search to find an item in collections of size one to n. Use it to generate a table of worst-case iterations of collections up to size 10.
+
+    def worst_case_printer(n)
+        return "worse case this would take "+ n.to_s + " iterations. sorry."
+    end
+
+    i made the graph but am not sure how to share it with you. 
+
+9)Create a graph from the output using Google Sheets or other graphing software. Analyze the graph and denote its Big-O somewhere on the graph.
+10)What is the Big-O of binary search? log n
+11)What is the Big-Ω of binary search? 1
+12)What is the Big-Ө of binary search? log n
