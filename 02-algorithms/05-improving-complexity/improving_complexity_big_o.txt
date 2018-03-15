@@ -1,0 +1,3 @@
+1) the first one i just cleaned up a very tiny bit. it uses insertion sort, so has a big o of (n^2.
+2) second one i used merge sort, so it has a big o of (n log n), which, at larger amounts, should be much faster
+3) last one i did was a heap sort, so it should also roll in at n log n, although i imagine that it would take a bit longer than the merge sort. 
