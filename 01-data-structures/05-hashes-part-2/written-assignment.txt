@@ -1,2 +1,6 @@
 1. three collision resolution strategies _not_ mentioned in the prompt:
-    1. 
+    1. coalesced hashing. suppsosedly a mixture of seperate chaining and open addressing, coalesced hashing resolves collisions by placing a new item into the next open bucket (as in open addressing), but keeping a link between the chain (at the initial collison) ala separate chaining.
+    2. hopscotch hashing. this strategy tries to group entries into 'neighborhoods' of proximity for searchability, popping them out of the neighborhood when there is no room (in a 'cuckoo-like' fashion), but using something similar to linear probing to find a new bucket outside of the 'neighborhood'.
+    3. robin hood hashing. i am not sure why it is called that, as it seems to be the opposite, from my understanding. it resolves collisions essentially by giving precedent to the key with the highest probe count (aka the wealthiest). effectively lower-probe-count (poorer) keys can be evicted in this way. it appears that it really reduces worst-case scenario, but at what cost !! 
+
+2. one way i think might be good would be if there was a collision, BOTH items went their seperate ways (as if they were both the lower-probe-count key in robin hood), with just a 'coalesced' link pointing the way to the new bucket for each. i think it would be cool to try out on a small scale for fun, although practically i wouldnt pick it over one of the more established methods. thanks !

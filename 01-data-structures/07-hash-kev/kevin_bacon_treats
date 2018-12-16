@@ -1,0 +1,67 @@
+hunt = BaconHunt.new
+keanu = Actor.new("Keanu Reeves")
+swayze = Actor.new("Patrick Swayze")
+whoopi = Actor.new("Whoopi Goldberg")
+kevin = Actor.new("Kevin Bacon")
+martha = Actor.new("Martha Stewart")
+tommy = Actor.new("Tommy Lee Jones")
+point_break = Film.new("Point Break")
+ghost = Film.new("Ghost")
+mib = Film.new("Men in Black II")
+jfk = Film.new("JFK")
+hunt.introduce(keanu)
+hunt.introduce(swayze)
+hunt.introduce(whoopi)
+hunt.introduce(kevin)
+hunt.introduce(martha)
+hunt.introduce(tommy)
+hunt.validate_career(keanu, point_break)
+hunt.validate_career(swayze, point_break)
+hunt.validate_career(swayze, ghost)
+hunt.validate_career(whoopi, ghost)
+hunt.validate_career(martha, mib)
+hunt.validate_career(tommy, mib)
+hunt.validate_career(tommy, jfk)
+hunt.validate_career(kevin, jfk)
+
+
+ let (:nun) { Actor.new("Some Nun") }
+  let (:father) { Actor.new("Someone's Dad") }
+  let (:simba) { Actor.new("Simba") }
+  let (:timon) { Actor.new("Timon") }
+  let (:scar) { Actor.new("Scar") }
+  let (:townies) { Actor.new("The Athenians") }
+
+
+    let (:sister) { Film.new("Sister Act II") }
+  let (:music) { Film.new("Sound of Music") }
+  let (:lion) { Film.new("Lion King") }
+  let (:jfk) { Film.new("Timon of Athens") }
+
+
+      it "fails to find kevin bacon" do
+      hunt.introduce(kevin)
+      hunt.introduce(swayze)
+      hunt.introduce(keanu)
+      hunt.introduce(whoopi)
+      hunt.introduce(nun)
+      hunt.introduce(father)
+      hunt.introduce(simba)
+      hunt.introduce(timon)
+      hunt.introduce(townies)
+      hunt.introduce(scar)
+      hunt.validate_career(keanu, point_break)
+      hunt.validate_career(swayze, point_break)
+      hunt.validate_career(swayze, ghost)
+      hunt.validate_career(whoopi, ghost)
+      hunt.validate_career(nun, sister)
+      hunt.validate_career(nun, music)
+      hunt.validate_career(father, music)
+      hunt.validate_career(whoopi, sister)
+      hunt.validate_career(father, lion)
+      hunt.validate_career(timon, lion)
+      hunt.validate_career(scar, lion)
+      hunt.validate_career(timon, athens)
+      hunt.validate_career(townies, athens)
+      expect(hunt.find_kevin_bacon(keanu)).to eq keanu.name
+    end
